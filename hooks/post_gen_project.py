@@ -2,32 +2,32 @@ import os
 import subprocess
 
 def main():
-    # Inicializar un repositorio Git
+    # Initialize a Git repository
     subprocess.run(["git", "init"], check=True)
-    print("Repositorio Git inicializado.")
+    print("Git repository initialized.")
 
-    # Agregar los archivos al stage
+    # Add files to the staging area
     subprocess.run(["git", "add", "."], check=True)
-    print("Archivos añadidos al stage.")
+    print("Files added to the staging area.")
 
-    # Hacer el primer commit
+    # Create the initial commit
     subprocess.run(["git", "commit", "-m", "Initial commit"], check=True)
-    print("Commit inicial creado.")
+    print("Initial commit created.")
 
-    # Configurar la rama principal como 'main'
+    # Set the main branch as 'main'
     subprocess.run(["git", "branch", "-M", "main"], check=True)
-    print("Rama principal configurada como 'main'.")
+    print("Main branch set to 'main'.")
 
-    # Solicitar la URL del repositorio remoto al usuario
-    repo_url = input("Introduce la URL del repositorio remoto (deja vacío si no quieres agregar un remoto ahora): ").strip()
+    # Ask the user for the remote repository URL
+    repo_url = input("Enter the remote repository URL (leave empty if you don't want to add a remote now): ").strip()
     if repo_url:
-        # Configurar el repositorio remoto
+        # Configure the remote repository
         subprocess.run(["git", "remote", "add", "origin", repo_url], check=True)
-        print(f"Repositorio remoto configurado: {repo_url}")
+        print(f"Remote repository configured: {repo_url}")
 
-        # Subir el proyecto al repositorio remoto
+        # Push the project to the remote repository
         subprocess.run(["git", "push", "-u", "origin", "main"], check=True)
-        print("Código subido al repositorio remoto.")
+        print("Code pushed to the remote repository.")
 
 if __name__ == "__main__":
     main()

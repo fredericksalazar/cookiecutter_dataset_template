@@ -1,0 +1,8 @@
+{
+    "dataset_name": "world_gdp_dataset",
+    "dataset_type": "tabular",
+    "dataset_description": "World GDP dataset",
+    "source": "world bank",
+    "author": "Frederick Salazar",
+    "email": "frederick.salazar@ejemplo.com"
+}
